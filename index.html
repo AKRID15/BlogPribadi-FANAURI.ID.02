@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Pribadi Tugas Basis Data</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body class="dark">
+
+  <div class="navbar">
+    <h1>FINAURI.ID</h1>
+    <ul class="nav-links">
+      <li onclick="showSection('home')">Home</li>
+      <li onclick="showSection('profilePosts')">Profil</li>
+      <li><a href="http://www.ubpkarawang.ac.id" target="_blank" style="text-decoration:none; color:inherit;">UBP Karawang</a></li>
+      <li><button class="toggle-btn" id="toggleMode">☀️</button></li>
+    </ul>
+
+    <div class="menu-right">
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <button class="toggle-btn" id="toggleModeMobile">☀️</button>
+    </div>
+  </div>
+
+  <ul class="mobile-menu" id="mobileMenu">
+    <li onclick="showSection('home');toggleMenu()">Home</li>
+    <li onclick="showSection('profilePosts');toggleMenu()">Profil</li>
+    <li><a href="http://www.ubpkarawang.ac.id" target="_blank" style="text-decoration:none; color:inherit;">UBP Karawang</a></li>
+  </ul>
+
+  <div class="container">
+
+    <!-- HOME -->
+    <div id="home" class="posts-wrapper">
+      <div class="tasks">
+        <div class="task-card" onclick="showSection('tugas1')">
+          <img src="img/harapanMK.png" alt="Tugas 1">
+          <h2>Tugas 1</h2>
+        </div>
+        <div class="task-card" onclick="showSection('tugas2')">
+          <img src="img/BASISDATA.PNG" alt="Tugas 2">
+          <h2>Tugas 2</h2>
+        </div>
+      </div>
+    </div>
+
+    <!-- TUGAS 1 -->
+    <div id="tugas1" class="posts-wrapper" style="display:none;">
+      <a class="back-btn" onclick="showSection('home')">← Kembali</a>
+      <div class="posts" id="tugas1Posts"></div>
+    </div>
+
+    <!-- TUGAS 2 -->
+    <div id="tugas2" class="posts-wrapper" style="display:none;">
+      <a class="back-btn" onclick="showSection('home')">← Kembali</a>
+      <div class="posts" id="tugas2Posts"></div>  <!-- <--- tambahkan ini -->
+    </div>
+
+
+    <!-- PROFIL -->
+    <div id="profilePosts" style="display:none;">
+      <div class="profile">
+        <img src="img/fp.png" alt="Foto Profil">
+        <h2>Andika Khoir Rijal</h2>
+        <p><b>NIM:</b> 24416255201047</p>
+        <p><b>Kelas:</b> IF24B</p>
+        <p><b>Email:</b> if24.andikarijal@mhs.ubpkarawang.ac.id</p>
+        <p><b>No. HP:</b> +62 895-1335-5063</p>
+      </div>
+
+      <div class="about">
+        <h3>Tentang Saya</h3>
+        <p>
+          Halo! Kenalin, saya <b>Andika Khoir Rijal</b>, mahasiswa program studi <b>Informatika</b> di <b>Universitas Buana Perjuangan Karawang (UBP Karawang)</b>, kelas IF24B.
+        </p>
+
+        <p>
+          <b>Kenapa IT?</b> Karena saya suka banget sama hal-hal yang <i>terstruktur</i>, <i>logis</i>, dan bisa <i>memecahkan masalah</i>. Di kampus, saya lagi seru-serunya nyelami ilmu dasar kayak <b>Basis Data</b> dan <b>Networking</b>.<br>
+          <i>Digital Mind, Market Soul</i>
+        </p>
+
+        <p>
+          Di luar coding dan tugas kampus, passion saya ada di dunia <b>Trading</b>. Dunia trading seru karena isinya <i>data</i>, <i>analisis</i>, dan <i>strategi</i>. Mirip banget sama IT, cuma output-nya berupa keputusan di pasar finansial.  
+          Kalau lagi senggang, saya suka ngoprek algoritma sederhana buat bantu analisis pergerakan harga, yang melibatkan ilmu Basis Data untuk ngumpulin historical data dan scripting buat eksekusinya.
+        </p>
+
+        <p>
+          <b>My Chill Zone</b><br>
+          Saat butuh refreshing dari layar laptop penuh chart atau code, biasanya saya:
+          <ul>
+            <li><b>Main Catur</b>: Melatih berpikir strategis dan sabar, sangat berguna di trading dan problem solving.</li>
+            <li><b>Bermain Game</b>: Khususnya game dengan alur cerita atau strategi, buat melepas penat dan mengasah fokus.</li>
+            <li><b>Bulu Tangkis (Badminton)</b>: Cara terbaik menjaga badan tetap bugar dan menyeimbangkan waktu di depan layar.</li>
+            <li><b>Nonton Anime</b>: Suka anime dengan plot twist kuat atau konsep fiksi ilmiah yang keren.</li>
+          </ul>
+        </p>
+
+        <p>
+          Intinya, saya adalah <b>data enthusiast</b> yang percaya skill IT bisa diterapkan di mana saja, termasuk untuk mencari peluang di pasar finansial.  
+          Senang berkenalan! Kalau ada yang mau diskusi soal query database atau potensi pasar, feel free to reach out!
+        </p>
+      </div>
+    </div>
+
+
+    <!-- DETAIL -->
+    <div id="detail" class="detail" style="display:none;"></div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+  <div class="footer-content" style="text-align:center; padding:20px; background:#222; color:#fff;">
+    &copy; 2025 FINAURI.ID. Semua hak cipta dilindungi.
+    <br><br>
+    <!-- Link media sosial dengan ikon Font Awesome -->
+    <a href="https://mail.google.com/mail/?view=cm&to=if24.andikarijal@mhs.ubpkarawang.ac.id" target="_blank" style="color:white; margin:0 10px; font-size:20px;">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://youtube.com/@finauri.id_if?si=PLjrkqtusTG1v1Vn" target="_blank" style="color:white; margin:0 10px; font-size:20px;">
+      <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://www.instagram.com/akr_1503?igsh=MW1keGozbHNqaXhyNA==" target="_blank" style="color:white; margin:0 10px; font-size:20px;">
+      <i class="fab fa-instagram"></i>
+    </a>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
